@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Electricity Bill Portal</h1>
+            <div class="user-info">
+                <span id="username"></span>
+                <button onclick="logout()">Logout</button>
+            </div>
+        </div>
+        
+        <nav class="navbar">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="payBill.html">Pay Bill</a></li>
+                <li><a href="registerComplaint.html">Register Complaint</a></li>
+                <li><a href="complaintStatus.html">Complaint Status</a></li>
+            </ul>
+        </nav>
+
+        <main class="complaint_container">
+            <h2>Payment</h2>
+            <p>Bill Amount: $<span id="billAmount">0</span></p>
+            <p>Total Payable Amount: $<span id="totalPayable">0</span></p>
+            <label>
+                Mode of Payment:
+                <select id="paymentMode">
+                    <option value="Debit">Debit</option>
+                    <option value="Credit">Credit</option>
+                </select>
+            </label>
+
+            <div>
+                <button onclick="payNow()">Pay Now</button>
+                <button onclick="backToHome()">Back to Home</button>
+            </div>
+            
+        </main>
+        
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

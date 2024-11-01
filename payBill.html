@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pay Bill</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Electricity Bill Portal</h1>
+            <div class="user-info">
+                <span id="username"></span>
+                <button onclick="logout()">Logout</button>
+            </div>
+        </div>
+
+        <nav class="navbar">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="payBill.html">Pay Bill</a></li>
+                <li><a href="registerComplaint.html">Register Complaint</a></li>
+                <li><a href="complaintStatus.html">Complaint Status</a></li>
+            </ul>
+        </nav>
+        
+        <main class="complaint_container">
+            <h2>View and Pay Bills</h2>
+            <form id="billForm">
+                <label><input type="checkbox" name="bill" value="100"> Bill #1 - $100</label><br>
+                <label><input type="checkbox" name="bill" value="200"> Bill #2 - $200</label><br>
+                <label><input type="checkbox" name="bill" value="150"> Bill #3 - $150</label><br>
+                <h3>Total Amount: $<span id="totalAmount">0</span></h3>
+
+                <div class="btn">
+                    <button class="submit" type="button" onclick="proceedToPay()">Proceed to Pay</button>
+                </div>
+                
+            </form>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

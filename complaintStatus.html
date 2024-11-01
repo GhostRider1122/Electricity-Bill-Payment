@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Status</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Electricity Bill Portal</h1>
+            <div class="user-info">
+                <span id="username"></span>
+                <button onclick="logout()">Logout</button>
+            </div>
+        </div>
+
+        <nav class="navbar">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="payBill.html">Pay Bill</a></li>
+                <li><a href="registerComplaint.html">Register Complaint</a></li>
+                <li><a href="complaintStatus.html">Complaint Status</a></li>
+            </ul>
+        </nav>
+
+        <main class="complaint_container">
+            <h2>Complaint Status</h2>
+            <form id="complaintStatusForm">
+                <label for="complaintId">Enter Complaint ID:<input type="text" id="complaintId" required></label>
+                
+
+                <div class="btn">
+                    <button class="submit" type="button" onclick="checkComplaintStatus()">Check Status</button>
+                </div>
+    
+            </form>
+
+            <div id="statusResult" style="margin-top: 20px;"></div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
