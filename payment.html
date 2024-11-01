@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Pay Bill</title>
+    <link rel="stylesheet" href="payBill.css">
+    <script src="app.js" defer></script>
 </head>
 <body>
     <div class="container">
         <div class="header">
             <h1>Electricity Bill Portal</h1>
             <div class="user-info">
-                <span id="username"></span>
+                <span id="welcomeMessage">Welcome <span id="username"></span></span>
                 <button onclick="logout()">Logout</button>
             </div>
         </div>
-        
+
         <nav class="navbar">
             <ul>
                 <li><a href="home.html">Home</a></li>
@@ -24,27 +25,57 @@
                 <li><a href="complaintStatus.html">Complaint Status</a></li>
             </ul>
         </nav>
-
-        <main class="complaint_container">
-            <h2>Payment</h2>
-            <p>Bill Amount: $<span id="billAmount">0</span></p>
-            <p>Total Payable Amount: $<span id="totalPayable">0</span></p>
-            <label>
-                Mode of Payment:
-                <select id="paymentMode">
-                    <option value="Debit">Debit</option>
-                    <option value="Credit">Credit</option>
-                </select>
-            </label>
-
-            <div>
-                <button onclick="payNow()">Pay Now</button>
-                <button onclick="backToHome()">Back to Home</button>
-            </div>
-            
-        </main>
         
+        <div class="center-content">
+            <h2>Bill Payment Details</h2>
+
+            <div class="payment-info2">
+                <p>Bill Amount: <span id="billAmount"></span></p>
+                <p>PG Charge: <span id="pgCharge">₹50</span></p>
+                <p>Total Payable Amount: <span id="totalAmount"></span></p>
+                
+                <label for="paymentMode">Mode of Payment:
+                <select id="paymentMode">
+                    <option value="" disabled selected>Select Type</option> <!-- Disabled option -->
+                    <option value="credit">Credit Card</option>
+                    <option value="debit">Debit Card</option>
+                </select>
+                </label>
+                
+                <div class="btn">
+                    <button class="reset" onclick="redirectToHome()">Back to Home</button>
+                    <button class="submit" onclick="proceedToPayment()">Pay Now</button>    
+                </div>
+            </div>
+
+            <div id="creditCardForm" class="hidden complaint_container">
+                <h2>Enter Credit Card Details</h2>
+                <form id="ccForm">
+                    <label for="cardNumber">Card No:<input type="number" id="cardNumber" min="16" required></label>
+                    
+                    
+                    <label for="cardHolderName">Card Holder Name:<input type="text" id="cardHolderName" minlength="10" required></label>
+                    
+                    
+                    <label for="expiryDate">Expiry Date (MM/YY):<input type="text" id="expiryDate" placeholder="MM/YY" required></label>
+                    
+                    
+                    <label for="cvv">CVV:<input type="number" id="cvv" min="3" required></label>
+                    
+                    <div style="display: flex; justify-content: center;">
+                        <button class="submit" type="button" onclick="makePayment()">Make Payment</button>
+                    </div>
+                </form>
+            </div>
+
+            <div id="transactionDetails" class="hidden">
+                <h2>Transaction Details</h2>
+                <p id="transactionInfo"></p>
+                <div style="display: flex; justify-content: center;">
+                    <button class="submit" id="downloadButton" onclick="downloadReceipt()" class="hidden">Download Receipt</button>
+                </div>
+            </div>
+        </div>
     </div>
-    <script src="app.js"></script>
 </body>
 </html>
