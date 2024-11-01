@@ -26,7 +26,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 
 .header h1 {
@@ -91,13 +90,12 @@ body {
 }
 
 .navbar button {
-      background-color: #28a745;
+    background-color: #28a745;
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-
 }
 
 .welcome-page {
@@ -119,82 +117,65 @@ button, select, input {
     padding: 5px 10px;
 }
 
-.complaint_container h2 {
-    text-align: start;
-    color: #3300ff;
-    font-weight: bold;
-}
-
-/* complaint page css */
-.complaint_container label {
-    display: block;
-    margin-bottom: 1px;
-    font-weight: bold;
-}
-
-.complaint_container form label {
-    display: block;
-    align-items: start;
-    margin-bottom: 10px;
-    font-weight: bold;
-}
-
-.complaint_container input, select, button, textarea{
-    width: 100%;
-    padding: 6px;
-    margin-top: 5px;
-    box-sizing: border-box;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    font-size: 14px;
-    background-color: #ffffff;
-}
-
-.complaint_container button {
-    cursor: pointer;
-}
-
-.complaint_container .btn {
-    display: flex;
-    padding: 5px;
-    justify-content: center;
-}
-
-.complaint_container .reset {
-    width: 50%;
-    padding: 10px;
-    background-color: rgba(255, 0, 0, 0.692);
-    margin: 5px;
-    color: white;
-    border-radius: 4px;
-    border-color: none;
-
-}
-
-.complaint_container .reset:hover {
-    background-color: rgb(134, 0, 0)
-}
-
-.complaint_container .submit {
-    width: 50%;
-    padding: 10px;
-    background-color: #28a745;
-    margin: 5px;
-    border-radius: 4px;
-    color: white;
-    border-color: none;
-    
-}
-
-.complaint_container .submit:hover {
-    background-color: #218838;
-}
-
 /* Center content styling */
 .center-content {
     border: 1px solid #ddd;
     width: 40%; 
     margin: 10px auto; /* Center-align the div */
-    padding: 20px; /* Optional: Add padding for spacing */
+    padding: 20px; 
     box-sizing: border-box;
+}
+
+.center-content h2 {
+    text-align: start;
+    color: #3300ff;
+    font-weight: bold;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd; /* Border for table cells */
+}
+
+th {
+    background-color: blue; /* Header background color */
+    color: white; /* Header text color */
+}
+
+tr:hover {
+    background-color: #f5f5f5; /* Hover effect for rows */
+}
+
+/* Payment button and total amount styling */
+.payment-info {
+    display: flex; 
+    justify-content: space-between; 
+    margin-top: 20px; 
+}
+
+.total-amount {
+    font-weight: bold;
+    color: red;
+}
+
+.submit {
+    width: 50%;
+    background-color: #28a745;
+    color: white; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit:hover {
+    background-color: #218838; 
 }

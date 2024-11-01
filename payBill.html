@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pay Bill</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="payBill.css">
 </head>
 <body>
     <div class="container">
@@ -25,20 +25,46 @@
             </ul>
         </nav>
         
-        <main class="complaint_container">
-            <h2>View and Pay Bills</h2>
-            <form id="billForm">
-                <label><input type="checkbox" name="bill" value="100"> Bill #1 - $100</label><br>
-                <label><input type="checkbox" name="bill" value="200"> Bill #2 - $200</label><br>
-                <label><input type="checkbox" name="bill" value="150"> Bill #3 - $150</label><br>
-                <h3>Total Amount: $<span id="totalAmount">0</span></h3>
-
-                <div class="btn">
+        <div class="center-content">
+            <main class="bill-payment">
+                <h2>View and Select Bills to Pay</h2>
+                
+                <!-- Bill selection table -->
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Month</th>
+                            <th>Amount</th>
+                            <th>Select</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>January</td>
+                            <td>Rs: 1000</td>
+                            <td><input type="checkbox" name="bill" value="1000" onclick="calculateTotal()"></td>
+                        </tr>
+                        <tr>
+                            <td>February</td>
+                            <td>Rs: 1500</td>
+                            <td><input type="checkbox" name="bill" value="1500" onclick="calculateTotal()"></td>
+                        </tr>
+                        <tr>
+                            <td>March</td>
+                            <td>Rs: 1200</td>
+                            <td><input type="checkbox" name="bill" value="1200" onclick="calculateTotal()"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                    
+                    <!-- Total Amount and Proceed to Pay -->
+                <div class="payment-info">
+                    <p class="total-amount">Total Amount: <span id="totalAmount">₹0</span></p>
                     <button class="submit" type="button" onclick="proceedToPay()">Proceed to Pay</button>
                 </div>
                 
-            </form>
-        </main>
+            </main>
+        </div>
     </div>
     <script src="app.js"></script>
 </body>

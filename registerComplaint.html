@@ -25,42 +25,44 @@
             </ul>
         </nav>
 
-        <main class="complaint_container">
-            <h2>Register Complaint</h2>
-            <form id="complaintForm">
-                <label for="complaintType">Complaint Type:
-                    <select id="complaintType" onchange="updateCategoryOptions()" required>
-                        <option value="" disabled selected>Select Type</option>
-                        <option value="Billing">Billing Related</option>
-                        <option value="Voltage">Voltage Related</option>
-                        <option value="Disruption">Frequent Disruption</option>
-                        <option value="StreetLight">Street Light Related</option>
-                        <option value="Pole">Pole Related</option>
-                    </select>
-                </label>
-
-                <label for="category">Category: 
-                    <select id="category" required>
-                        <option value="" disabled selected>Select Category</option>
-                    </select>
-                </label>
-            
-
-                <label for="contactPerson">Contact Person: <input type="text" id="contactPerson" required></label>
-                <label for="landmark">Landmark: <input type="text" id="landmark" required></label>
-                <label for="consumerNo">Consumer No: <input type="text" id="consumerNo" maxlength="13" required></label>
-                <label for="description">Problem Description: <textarea id="description" rows="4" required></textarea></label>
-                <label for="mobile">Mobile Number: <input type="text" id="mobile" maxlength="10" required></label>
-                <label for="address">Address: <textarea id="address" rows="4" required></textarea></label>
-            
-
-                <div class="btn">
-                    <button class="reset" type="reset">Reset</button>
-                    <button class="submit" type="button" onclick="submitComplaint()">Submit Complaint</button>
-                </div>
+        <div class="center-content"> 
+            <main class="complaint_container">
+                <h2>Register Complaint</h2>
+                <form id="complaintForm">
+                    <label for="complaintType">Complaint Type:
+                        <select id="complaintType" onchange="updateCategoryOptions()" required>
+                            <option value="" disabled selected>Select Type</option>
+                            <option value="Billing">Billing Related</option>
+                            <option value="Voltage">Voltage Related</option>
+                            <option value="Disruption">Frequent Disruption</option>
+                            <option value="StreetLight">Street Light Related</option>
+                            <option value="Pole">Pole Related</option>
+                        </select>
+                    </label>
+    
+                    <label for="category">Category: 
+                        <select id="category" required>
+                            <option value="" disabled selected>Select Category</option>
+                        </select>
+                    </label>
                 
-            </form>
-        </main>
+    
+                    <label for="contactPerson">Contact Person: <input type="text" id="contactPerson" required></label>
+                    <label for="landmark">Landmark: <input type="text" id="landmark" required></label>
+                    <label for="consumerNo">Consumer No: <input type="text" id="consumerNo" maxlength="13" required></label>
+                    <label for="description">Problem Description: <textarea id="description" rows="4" required></textarea></label>
+                    <label for="mobile">Mobile Number: <input type="text" id="mobile" maxlength="10" required></label>
+                    <label for="address">Address: <textarea id="address" rows="4" required></textarea></label>
+                
+    
+                    <div class="btn">
+                        <button class="reset" type="reset">Reset</button>
+                        <button class="submit" type="button" onclick="submitComplaint()">Submit Complaint</button>
+                    </div>
+                    
+                </form>
+            </main>
+        </div>
 
     </div>
     <script src="app.js"></script>

@@ -5,15 +5,25 @@ function calculateTotal() {
     checkboxes.forEach(checkbox => {
         total += parseInt(checkbox.value);
     });
-    document.getElementById("totalAmount").textContent = total;
+
+    // Display the total amount with a dollar sign
+    document.getElementById("totalAmount").textContent = `₹${total}`;
+    
+    // Enable or disable the "Proceed to Pay" button based on the total amount
+    document.getElementById("proceedButton").disabled = total === 0;
 }
 
 // Proceed to payment page
 function proceedToPay() {
-    const totalAmount = document.getElementById("totalAmount").textContent;
-    localStorage.setItem("billAmount", totalAmount);
-    window.location.href = 'payment.html';
+    const totalAmount = document.getElementById("totalAmount").textContent.replace('₹', ''); // Remove dollar sign
+    if (parseInt(totalAmount) > 0) {
+        localStorage.setItem("billAmount", totalAmount);
+        window.location.href = 'payment.html';
+    } else {
+        alert("Please select at least one bill to proceed with payment.");
+    }
 }
+
 
 // Display bill amount on Payment page
 window.onload = function() {
