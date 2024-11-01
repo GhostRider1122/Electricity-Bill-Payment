@@ -166,11 +166,11 @@ function updateCategoryOptions() {
     }
 }
 
-window.onload = function () {
-    if (performance.navigation.type === performance.navigation.TYPE_BACK_FORWARD) {
+window.addEventListener("pageshow", function (event) {
+    if (event.persisted || window.performance && window.performance.getEntriesByType("navigation")[0].type === "back_forward") {
         window.location.reload();
     }
-};
+});
 
 //Payment page JS
 
@@ -263,6 +263,9 @@ function makePayment() {
     document.getElementById("transactionInfo").textContent = `Payment of ₹${totalAmount} was successful using ${document.getElementById("paymentMode").value}.`;
     document.getElementById("transactionDetails").classList.remove("hidden");
     document.getElementById("downloadButton").classList.remove("hidden");
+    document.getElementById("payInfo").classList.add("hidden");
+    document.getElementById("creditCardForm").classList.add("hidden");
+    document.getElementById("billHeader").classList.add("hidden");
 }
 
 // Function to download receipt
