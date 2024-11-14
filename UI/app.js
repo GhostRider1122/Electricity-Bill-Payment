@@ -1,3 +1,9 @@
+window.addEventListener("pageshow", function (event) {
+    if (event.persisted || window.performance && window.performance.getEntriesByType("navigation")[0].type === "back_forward") {
+        window.location.reload();
+    }
+});
+
 // Highlight the active link in the navigation bar
 function setActiveNavLink() {
     const navLinks = document.querySelectorAll("nav ul li a");
@@ -202,12 +208,6 @@ function updateCategoryOptions() {
         });
     }
 }
-
-window.addEventListener("pageshow", function (event) {
-    if (event.persisted || window.performance && window.performance.getEntriesByType("navigation")[0].type === "back_forward") {
-        window.location.reload();
-    }
-});
 
 // Validate and submit the complaint form
 function submitComplaint() {
