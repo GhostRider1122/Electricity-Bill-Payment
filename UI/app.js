@@ -67,7 +67,6 @@ function proceedToPay() {
     if (parseInt(totalAmount) > 0) {
         localStorage.setItem("billAmount", totalAmount);
         window.location.href = 'payment.html';
-        console.log(parseInt(totalAmount));
     } else {
         alert("Please select at least one bill to proceed with payment.");
     }
